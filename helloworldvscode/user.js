@@ -1,13 +1,14 @@
-var User = (function () {
-    function User(firstname, lastname) {
-        this.fullname = firstname + " " + lastname;
+var Foo = (function () {
+    function Foo() {
     }
-    User.prototype.hello = function () {
-        return "Hello, " + this.fullname;
+    Foo.alertName = function (firstName) {
+        var restOfName = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            restOfName[_i - 1] = arguments[_i];
+        }
+        alert(firstName + " " + restOfName.join(" "));
     };
-    return User;
+    return Foo;
 })();
-var user = new User("Łukasz", "Matyja");
-console.log(user.hello());
-alert(user.hello());
+Foo.alertName("Mr", "John", "Doe");
 //# sourceMappingURL=user.js.map
