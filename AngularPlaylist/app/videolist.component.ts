@@ -1,8 +1,15 @@
-import {Component} from 'angular2/core';
+import {Component, EventEmitter} from 'angular2/core';
+import {Video} from './video';
 @Component({
     selector: 'video-list',
-    templateUrl: 'app/videolist.component.html'
+    templateUrl: 'app/videolist.component.html',
+    inputs: ['videos'],
+    outputs: ['selectVideo']
 })
 export class VideoListComponent {
-    
+    selectVideo = new EventEmitter();
+    onSelect(vid: Video){
+        console.log('emit');
+       this.selectVideo.emit(vid);
+    }
 }

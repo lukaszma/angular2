@@ -18,11 +18,18 @@ System.register(['angular2/core'], function(exports_1) {
         execute: function() {
             VideoListComponent = (function () {
                 function VideoListComponent() {
+                    this.selectVideo = new core_1.EventEmitter();
                 }
+                VideoListComponent.prototype.onSelect = function (vid) {
+                    console.log('emit');
+                    this.selectVideo.emit(vid);
+                };
                 VideoListComponent = __decorate([
                     core_1.Component({
                         selector: 'video-list',
-                        templateUrl: 'app/videolist.component.html'
+                        templateUrl: 'app/videolist.component.html',
+                        inputs: ['videos'],
+                        outputs: ['selectVideo']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], VideoListComponent);
