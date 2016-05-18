@@ -1,6 +1,13 @@
 import {Component} from 'angular2/core';
+import {Mock} from './mock';
+import {Person} from './model';
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    templateUrl: 'app/app.component.html'
 })
-export class AppComponent { }
+export class AppComponent { 
+    user: Person;
+    constructor(_mock: Mock){
+        this.user =_mock.mike;
+    }
+}
