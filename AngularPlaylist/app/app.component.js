@@ -1,4 +1,6 @@
-System.register(['angular2/core', './config.service', './video', './videolist.component', './videodetail.component'], function(exports_1) {
+System.register(['angular2/core', './config.service', './video', './videolist.component', './videodetail.component'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,8 +31,8 @@ System.register(['angular2/core', './config.service', './video', './videolist.co
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
-                    this.title = config_service_1.Config.TITLE_PAGE;
+                function AppComponent(_config) {
+                    this.title = _config.TITLE_PAGE;
                     this.videos = [
                         new video_1.Video(1, "Who got the funk", "https://www.youtube.com/embed/zMBTvuUlm98", "Trochę funky"),
                         new video_1.Video(2, "Down the road", "https://www.youtube.com/embed/YzR8BCmV9Ew", "electro music with funk")
@@ -55,10 +57,10 @@ System.register(['angular2/core', './config.service', './video', './videolist.co
                         templateUrl: 'app/app.component.html',
                         directives: [videolist_component_1.VideoListComponent, videodetail_component_1.VideoDetailComponent]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [config_service_1.Config])
                 ], AppComponent);
                 return AppComponent;
-            })();
+            }());
             exports_1("AppComponent", AppComponent);
         }
     }

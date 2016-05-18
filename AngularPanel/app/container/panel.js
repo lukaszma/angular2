@@ -11,39 +11,28 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var VideoDetailComponent;
+    var Panel;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            VideoDetailComponent = (function () {
-                function VideoDetailComponent() {
-                    this.editTitle = false;
-                    this.closeForm = new core_1.EventEmitter;
+            Panel = (function () {
+                function Panel() {
                 }
-                VideoDetailComponent.prototype.onTitleClick = function () {
-                    this.editTitle = true;
-                };
-                VideoDetailComponent.prototype.onButtonOkClick = function () {
-                    this.closeForm.emit({});
-                };
-                VideoDetailComponent.prototype.ngOnChanges = function () {
-                    this.editTitle = false;
-                };
-                VideoDetailComponent = __decorate([
+                Panel = __decorate([
                     core_1.Component({
-                        selector: 'video-detail',
-                        templateUrl: 'app/videodetail.component.html',
-                        inputs: ['video']
+                        selector: 'panel',
+                        templateUrl: 'app/container/panel.html',
+                        inputs: ['title']
                     }), 
                     __metadata('design:paramtypes', [])
-                ], VideoDetailComponent);
-                return VideoDetailComponent;
+                ], Panel);
+                return Panel;
             }());
-            exports_1("VideoDetailComponent", VideoDetailComponent);
+            exports_1("Panel", Panel);
         }
     }
 });
-//# sourceMappingURL=videodetail.component.js.map
+//# sourceMappingURL=panel.js.map

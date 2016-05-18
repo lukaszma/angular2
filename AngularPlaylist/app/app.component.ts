@@ -9,16 +9,19 @@ import {VideoDetailComponent} from './videodetail.component';
     directives: [VideoListComponent, VideoDetailComponent]
 })
 export class AppComponent { 
-    title = Config.TITLE_PAGE;
+    title :string;
     videos: Array<Video>;
     selectedVideo: Video;
     
-    constructor(){
+    constructor(_config: Config){
+        this.title = _config.TITLE_PAGE;
         this.videos = [
             new Video(1,"Who got the funk","https://www.youtube.com/embed/zMBTvuUlm98","Trochę funky"),
             new Video(2,"Down the road","https://www.youtube.com/embed/YzR8BCmV9Ew","electro music with funk")
         ]
+        
     }
+
     
     onSelectVideo(video){
         console.log('da');
